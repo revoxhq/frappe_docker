@@ -1,14 +1,14 @@
 version: "3"
 services:
   mariadb:
-    image: mariadb:10.3
+    image: mariadb:10.2
     restart: on-failure
     networks:
       - swarm
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ./installation/frappe-mariadb.cnf:/etc/mysql/conf.d/frappe.cnf
+      - ./installation/frappe-mariadb.cnf:/etc/my.cnf.d/frappe.cnf
       - mariadb-vol:/var/lib/mysql
   erpnext-nginx:
     image: frappe/erpnext-nginx
