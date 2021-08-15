@@ -8,7 +8,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     volumes:
-      - ./installation/frappe-mariadb.cnf:/etc/my.cnf.d/frappe.cnf
+      - ./installation/frappe-mariadb.cnf:/etc/mysql/mariadb.conf.d/50-server.cnf
       - mariadb-vol:/var/lib/mysql
   erpnext-nginx:
     image: frappe/erpnext-nginx
